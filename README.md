@@ -72,7 +72,7 @@ lgWloet_K_ekae2}
 
 就能找到 [gStore: answering SPARQL queries via subgraph matching (acm.org)](https://dl.acm.org/doi/10.14778/2002974.2002976)，根据答案格式可知是`10.14778/2002974.2002976`。![2](images/2.png)
 
-~~好像直接搜索 `gStore doi` 就可以找到那个 doi 网站了:(~~ 
+~~好像直接搜索 gStore doi 就可以找到那个 doi 网站了:(~~ 
 
 > 视频 bilibili.com/video/BV1EV411s7vu 也可以通过 bilibili.com/video/av_____ 访问。下划线内应填什么数字？
 
@@ -88,7 +88,7 @@ lgWloet_K_ekae2}
 
 其实这是域名代码(Punycode)，知道可以直接用在线工具转换。
 
-不知道也可以按 F12，输入网址，回车，在网络请求中找到Host:`ctf.xn--4gqwbu44czhc7w9a66k.com`
+不知道也可以按 F12，输入网址，回车，在网络请求中找到Host：`ctf.xn--4gqwbu44czhc7w9a66k.com`
 
 > 每个 Android 软件都有唯一的包名。北京大学课外锻炼使用的最新版 PKU Runner 软件的包名是什么？
 
@@ -96,7 +96,7 @@ lgWloet_K_ekae2}
 
 > 在第一届 PKU GeekGame 比赛的题目《电子游戏概论》中，通过第 6 级关卡需要多少金钱？
 
-这题关卡级别会变，到去年的存档里找到这题，一通翻找到[libtreasure.py](https://github.com/PKU-GeekGame/geekgame-1st/blob/master/src/pygame/game/server/libtreasure.py)里有句`GOAL_OF_LEVEL = lambda level: 300+int(level**1.5)*100` 猜测就是需要的金钱数，带入公式即可。
+这题关卡级别会变，到去年的存档里找到这题，一通翻找到 [libtreasure.py](https://github.com/PKU-GeekGame/geekgame-1st/blob/master/src/pygame/game/server/libtreasure.py) 里有句`GOAL_OF_LEVEL = lambda level: 300+int(level**1.5)*100` 猜测就是需要的金钱数，带入公式即可。
 
 > 我刚刚在脑海中想了一个介于 9758930138 到 9758930568 之间的质数。猜猜它是多少？
 
@@ -207,7 +207,7 @@ print(base64.b64decode(rot13("MzkuM8gmZJ6jZJHgnaMuqy4lMKM4")))
 # flag{s1mp1e-jvav_rev}
 ```
 
-回到之前的乱码，这里用
+回到之前的乱码，这里将 str 里的每个字符都与 0xEF异或然后执行生成的代码：
 
 ```java
 try
@@ -222,7 +222,7 @@ try
 }
 ```
 
-这里将 str 里的每个字符都与 0xEF异或然后执行生成的代码，逆推下：
+逆推下：
 
 ```py
 ss = '\u0089\u009a\u0081\u008c\u009b\u0086......\u0092'
@@ -246,11 +246,10 @@ function checkflag2(a) {
 }
 ```
 
-这样就比较明了了，就是将 a 转成 map 和后面的执行结果判等。直接到浏览器里先运行下
+这样就比较明了了，就是将 a 转成 map 和后面的执行结果判等。直接到浏览器里运行下：
 
 ```javascript
 function checkflag2(_0xa83ex2){var _0x724b=['charCodeAt','map','','split','stringify','Correct','Wrong','j-'];return (JSON[_0x724b[4]](_0xa83ex2[_0x724b[3]](_0x724b[2])[_0x724b[1]](function(_0xa83ex3){return _0xa83ex3[_0x724b[0]](0)}))== JSON[_0x724b[4]]([0,15,16,17,30,105,16,31,16,67,3,33,5,60,4,106,6,41,0,1,67,3,16,4,6,33,232][_0x724b[1]](function(_0xa83ex3){return (checkflag2+ _0x724b[2])[_0x724b[0]](_0xa83ex3)}))?_0x724b[5]:_0x724b[6])}
-// 再运行下
 JSON['stringify']([0, 15, 16, 17, 30, 105, 16, 31, 16, 67, 3, 33, 5, 60, 4, 106, 6, 41, 0, 1, 67, 3, 16, 4, 6, 33, 232]['map'](function(c) {return (checkflag2 + '')['charCodeAt'](c)}))
 // [102,108,97,103,123,106,97,118,97,115,99,114,105,112,116,45,111,98,102,117,115,99,97,116,111,114,125]
 ```
@@ -295,19 +294,19 @@ SSSSSSS
 
 然后抓包，修改 https://docs.qq.com/dop-api/get/sheet 的返回为流量包里的，其他全部放行就行。
 
-你就能得到一个奇怪的界面，发现字体为等线的地方就是 flag 涂黑的地方，双击就能把它涂黑，还能把周围的黑色方框显示出来，只要花点时间就能得到 flag 了~~（注意大小写）~~，图片见 [src/3.png](src/3.png)。
+你就能得到一个奇怪的界面，发现字体为等线的地方就是 flag 涂黑的地方，双击就能把它涂黑，还能把周围的黑色方框显示出来，只要花点时间就能得到 flag 了（注意大小写），图片见 [src/3.png](src/3.png)。
 
 `flag{HopefullySponsoredByTencent}`
 
 ## 私有笔记
 
-访问[https://prob07.geekgame.pku.edu.cn/index.php/特殊:版本](https://prob07.geekgame.pku.edu.cn/index.php/特殊:版本)先查看下版本，是 1.36.4，安装了 Score 扩展，这些后面有用。
+访问 [https://prob07.geekgame.pku.edu.cn/index.php/特殊:版本](https://prob07.geekgame.pku.edu.cn/index.php/特殊:版本)先查看下版本，是 1.36.4，安装了 Score 扩展，这些后面有用。
 
 搜索 `MediaWiki 漏洞` 可以找到 [2021-12安全发布/常见问题解答](https://www.mediawiki.org/wiki/2021-12_security_release/FAQ/zh)，里面有介绍了几种绕过编辑权限读取的办法，我利用的是 CVE-2021-45038，POC：`https://prob07.geekgame.pku.edu.cn/index.php?action=rollback&from={{:Flag}}`。
 
-会提示回退失败，下面就把 flag 显示出来了`flag{insecure_01d_mediavviki}`。
+会提示回退失败，下面正文就把 flag 显示出来了`flag{insecure_01d_mediavviki}`。
 
-~~（HackerGame2022拿了[Flag 的痕迹](https://hack.lug.ustc.edu.cn/#Flag 的痕迹)一血，这里没抢到，悲:(~~
+~~没抢到一血，悲:(~~
 
 第二阶段提示 Mediawiki Score RCE，搜索到 CVE-2020-29007，GIthub 上搜下看看有没有 POC。
 
@@ -351,7 +350,7 @@ SSSSSSS
 
 这题好像是动态 flag 就不放了`flag{$UUID}`。
 
-~~第二阶段才做出来是因为没想到要选择第三个发，悲:(~~
+第二阶段才做出来是因为没想到要选择第三个发，悲:(
 
 ## 381654729
 
