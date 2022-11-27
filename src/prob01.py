@@ -2,29 +2,29 @@ from pwn import *
 import gmpy2
 
 def bili():
-    p.sendline(bytes("418645518", encoding = "utf-8"))
+    p.sendline(b"418645518")
 
 def isprime(prime):
     pr = gmpy2.next_prime(prime)
     p.sendline(bytes(str(pr), encoding="utf-8"))
 
 def android():
-    p.sendline(bytes("cn.edu.pku.pkurunner", encoding="utf-8"))
+    p.sendline(b"cn.edu.pku.pkurunner")
 
 def webp():
-    p.sendline(bytes("65", encoding="utf-8"))
+    p.sendline(b"65")
 
 def android():
-    p.sendline(bytes("cn.edu.pku.pkurunner", encoding="utf-8"))
+    p.sendline(b"cn.edu.pku.pkurunner")
 
 def doi():
-    p.sendline(bytes("10.14778/2002974.2002976", encoding="utf-8"))
+    p.sendline(b"10.14778/2002974.2002976")
 
 def ctf():
-    p.sendline(bytes("ctf.xn--4gqwbu44czhc7w9a66k.com", encoding="utf-8"))
+    p.sendline(b"ctf.xn--4gqwbu44czhc7w9a66k.com")
 
 def mac():
-    p.sendline(bytes("80304", encoding="utf-8"))
+    p.sendline(b"80304")
 
 def ele(level):
     p.sendline(bytes(str(300+int(level**1.5)*100), encoding="utf-8"))
@@ -55,7 +55,7 @@ def solve():
     solve()
 
 p = remote("prob01.geekgame.pku.edu.cn", 10001)
-token = "115:MEQCIHO6hP4fDSzfjEmDA99kA-hNlx8PQBXSgETB-Tnd7GvYAiBNvLnTTT2hJ6MWRUq9LVmCA1XIMVVleSDdud8TFk3gWA=="
+token = ""
 p.recv()
 p.sendline(bytes(token, encoding="utf-8"))
 p.recv()
